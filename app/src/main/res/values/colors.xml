@@ -1,0 +1,12 @@
+<resources>
+    <color name="sky">#EAF7FC</color>
+    <color name="sky2">#CFEDF7</color>
+    <color name="water">#34B6D4</color>
+    <color name="water_dark">#1F94BC</color>
+    <color name="deep">#12657F</color>
+    <color name="ink">#123B49</color>
+    <color name="sun">#F0A93C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="track">#DCEFF6</color>
+    <color name="muted">#6E8B95</color>
+</resources>

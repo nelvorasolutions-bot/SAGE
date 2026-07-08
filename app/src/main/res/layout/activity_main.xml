@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sky"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Water Buddy"
+                android:textColor="@color/deep"
+                android:textStyle="bold"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/streakPill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_sun"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="7dp"
+                android:text="🔥 0"
+                android:textColor="@color/sun"
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- buddy -->
+        <ImageView
+            android:id="@+id/homeBuddy"
+            android:layout_width="200dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="Water buddy"/>
+
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="0 / 2000 ml"
+            android:textColor="@color/water_dark"
+            android:textStyle="bold"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:text="Let's get started"
+            android:textColor="@color/muted"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+        <ProgressBar
+            android:id="@+id/bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_water"/>
+
+        <TextView
+            android:id="@+id/btnDrink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_pill"
+            android:paddingVertical="16dp"
+            android:gravity="center"
+            android:text="💧  I drank a glass"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="19sp"/>
+
+        <!-- quick add -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="3">
+
+            <TextView android:id="@+id/qHalf" style="@style/Chip" android:text="+ ½"/>
+            <TextView android:id="@+id/qBig"  style="@style/Chip" android:text="+ Big" android:layout_marginHorizontal="8dp"/>
+            <TextView android:id="@+id/qUndo" style="@style/Chip" android:text="Undo"/>
+        </LinearLayout>
+
+        <!-- FLOATING BUDDY card -->
+        <TextView style="@style/Section" android:text="FLOATING BUDDY"/>
+        <LinearLayout style="@style/Card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Let your buddy walk onto the screen over other apps to remind you."
+                android:textColor="@color/muted"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/btnOverlayPerm"
+                style="@style/Chip"
+                android:layout_width="match_parent"
+                android:text="1. Allow drawing over other apps"/>
+
+            <TextView
+                android:id="@+id/btnNotifPerm"
+                style="@style/Chip"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:text="2. Allow notifications"/>
+
+            <TextView
+                android:id="@+id/btnPreview"
+                style="@style/Chip"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:text="Preview: make buddy appear now"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="16dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reminders"
+                        android:textColor="@color/ink"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:id="@+id/reminderHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Off"
+                        android:textColor="@color/muted"
+                        android:textStyle="bold"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchReminders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- SETTINGS -->
+        <TextView style="@style/Section" android:text="SETTINGS"/>
+        <LinearLayout style="@style/Card" android:orientation="vertical">
+
+            <LinearLayout style="@style/Row">
+                <TextView style="@style/RowLabel" android:text="Daily goal"/>
+                <TextView android:id="@+id/goalMinus" style="@style/StepBtn" android:text="−"/>
+                <TextView android:id="@+id/goalValue" style="@style/StepVal" android:text="2000 ml"/>
+                <TextView android:id="@+id/goalPlus" style="@style/StepBtn" android:text="+"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout style="@style/Row">
+                <TextView style="@style/RowLabel" android:text="Glass size"/>
+                <TextView android:id="@+id/glassMinus" style="@style/StepBtn" android:text="−"/>
+                <TextView android:id="@+id/glassValue" style="@style/StepVal" android:text="250 ml"/>
+                <TextView android:id="@+id/glassPlus" style="@style/StepBtn" android:text="+"/>
+            </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+            <LinearLayout style="@style/Row">
+                <TextView style="@style/RowLabel" android:text="Remind every"/>
+                <TextView android:id="@+id/intMinus" style="@style/StepBtn" android:text="−"/>
+                <TextView android:id="@+id/intValue" style="@style/StepVal" android:text="60 min"/>
+                <TextView android:id="@+id/intPlus" style="@style/StepBtn" android:text="+"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/Section" android:text="STATS"/>
+        <LinearLayout style="@style/Card">
+            <TextView
+                android:id="@+id/statsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/ink"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:lineSpacingExtra="6dp"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="24dp"/>
+    </LinearLayout>
+</ScrollView>
